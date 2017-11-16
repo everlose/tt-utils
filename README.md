@@ -1,6 +1,6 @@
 # tt-utils
 
-ctt\'s utils library 个人业务函数库，希望能给你一些启发，具体搭建的文档参照[这里](./docs/step 1.md)
+ctt\'s utils library 个人业务函数库，希望能给你一些启发，具体搭建的文档参照[这里](https://github.com/everlose/tt-utils/blob/master/docs/step%201.md)
 
 ## Build Setup
 
