@@ -1,17 +1,30 @@
 {
   "name": "tt-utils",
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "main": "bundle/tt-utils.min.js",
   "description": "ctt's utils library",
   "author": "everlose <ever-lose@foxmail.com>",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src example test/unit/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "release": "webpack --config build/webpack.release.js && webpack -p --config build/webpack.release.min.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/everlose/tt-utils.git"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
+  },
+  "keywords": [
+    "vue",
+    "util library"
+  ],
+  "bugs": "https://github.com/everlose/tt-utils/issues",
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
@@ -85,5 +98,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "license": "MIT"
 }
