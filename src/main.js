@@ -1,3 +1,3 @@
-export default {
-    text: 'hello world'
-};
+import formatTime from './formatTime';
+
+export default { formatTime };

@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import ttUtils from '~/main.js';
 
-console.log(ttUtils.text);
+Vue.use(ttUtils.formatTime);
 
 Vue.config.productionTip = false
 
