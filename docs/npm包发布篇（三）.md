@@ -10,7 +10,6 @@ __package.json__
 ...
 "name": "tt-utils",
 "main": "src/main.js",
-"private": false,
 "repository": {
   "type": "git",
   "url": "https://github.com/everlose/tt-utils.git"
