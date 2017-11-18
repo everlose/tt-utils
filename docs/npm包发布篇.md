@@ -250,4 +250,8 @@ $ npm publish
 
 我发现每过两个月回头看自己以前的代码都会觉得好傻逼，只有时时更新自己最新的体会的代码才能让自己满意，那么截至目前，代码没有任何的测试，某天觉得某段函数写的不好，想重构那段，没有测试十分容易踩坑，于是下篇分析如何写单测。
 
-未完待续。
+## 本系列所有文章
+
+1. [项目初建篇](https://github.com/everlose/tt-utils/blob/master/docs/%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%BB%BA%E7%AF%87.md)
+2. [npm包发布篇](https://github.com/everlose/tt-utils/blob/master/docs/npm%E5%8C%85%E5%8F%91%E5%B8%83%E7%AF%87.md)
+3. [单测编写篇](https://github.com/everlose/tt-utils/blob/master/docs/%E5%8D%95%E6%B5%8B%E7%BC%96%E5%86%99%E7%AF%87.md)
