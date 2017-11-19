@@ -2,6 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+var utilsMd = require('./utils-md')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve(dir) {
@@ -48,6 +49,11 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: [resolve('src'), resolve('example'), resolve('test')]
+            },
+            {
+                test: /\.md$/,
+                loader: 'vue-markdown-loader',
+                options: utilsMd.markdownLoader()
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
