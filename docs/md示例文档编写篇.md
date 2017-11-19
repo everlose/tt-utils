@@ -34,7 +34,7 @@ module: {
 }
 ```
 
-关于 __build/utils-md.js__ 文件这里我摘用了 element 的代码
+关于 __build/utils-md.js__ , markdownIt 的详细用法参见 [markdown-it](https://github.com/markdown-it/markdown-it)
 
 ```
 
