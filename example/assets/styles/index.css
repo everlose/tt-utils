@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #eee;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+               "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",
+               Arial,sans-serif;
+    font-weight: 400;
+    color: rgba(0,0,0,.65);
+    -webkit-font-smoothing: antialiased;
+}
+
+code.hljs {
+    padding: 16px 20px;
+}
+
+.hljs {
+    line-height: 1.4;
+}
+
+blockquote {
+    font-size: 90%;
+    color: #999;
+    border-left: 4px solid #e9e9e9;
+    padding-left: .8em;
+    margin: 1em 0;
+    font-size: 13px;
+}
+
+a {
+    color: #FF571A;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7340;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    outline: none;
+}

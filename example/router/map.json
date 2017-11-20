@@ -1,0 +1,12 @@
+[
+    {
+        "path": "/changelog",
+        "name": "changelog",
+        "componentName": "changelog"
+    },
+    {
+        "path": "/formatTime",
+        "name": "formatTime",
+        "componentName": "formatTime"
+    }
+]

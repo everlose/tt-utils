@@ -28,9 +28,9 @@ export default {
 ## API
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|---------- |-------- |---------- |-------------  |-------- |
-| value | 时间戳 | Number | | |
-| format | 复制完成后的回调函数 | Function | 'YYYY-MM-DD hh:mm:ss' 这样的形式 | |
+|-------- |-------------- |------ |---------------  |-------- |
+| value | 时间戳 | Number | - | - |
+| format | 复制完成后的回调函数 | Function | 'YYYY-MM-DD hh:mm:ss' 这样的形式 | - |
 
 
 <script>
