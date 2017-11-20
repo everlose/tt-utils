@@ -102,7 +102,7 @@ export default new Router({
 ]
 ```
 
-对比新旧项目输出发现新项目中的 component 下多包了一层 default，而且还有一个属性 `__esModule: true`，却是不知为何 require 进来的东西却被当作 esModule，此刻我已经在猜测 webpack 版本有问题。
+对比新旧项目输出发现新项目中的 component 下多包了一层 default，而且还有一个属性 `__esModule: true`，却是不知为何 require 进来的东西却被当作 esModule。
 
 ## 解决
 
@@ -120,9 +120,7 @@ let routes = routesMap.map((route) => {
 
 ## 深入webpack
 
-最后翻来覆去的找答案，还真找到了解释，感谢前人的探索，贴上其分享链接[探索webpack模块以及webpack3新特性](https://juejin.im/post/59b9d2336fb9a00a636a3158)。
-
-> 其实这部分如果你看到babel转换ES Modules源码就知道了，为了兼容模块，会把ES Modules直接挂在exports.default上，然后加上__esModule属性，引入的时候判断一次是否是转换模块，是则引入module['default']，不是则引入module
+最后翻来覆去的找答案，在一篇探索 webpack3 的文章上找到了思路，[探索webpack模块以及webpack3新特性](https://juejin.im/post/59b9d2336fb9a00a636a3158)。
 
 ```javascript
 /******/     // getDefaultExport function for compatibility with non-harmony modules 解决ES module和Common js module的冲突，ES则返回module['default']
@@ -134,6 +132,24 @@ let routes = routesMap.map((route) => {
 /******/         return getter;
 /******/     };
 ```
+
+在文中的一段揭示 webpack3 编译后的代码里，我找到了熟悉的 module.__esModule，原来esModule是这等用处，那么为何在 webpack2 中没有被标记为 esModule 呢？
+
+我在 webpack3 编译后的 app.js 搜索 `changelog.md`，发现了一个东西
+
+![](http://7xn4mw.com1.z0.glb.clouddn.com/17-11-20/49735056.jpg)
+
+编译后的 app.js 里，是 eval 执行了引入整个编译 changelog.md 的代码，非常长。而在 eval 中打头的就看到我们熟悉的老朋友__esModule
+
+```
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true }) .........
+```
+
+而这个标识在 webpack2 编译后的代码是找不到的，如下图所见，编译后的 app.js 直接返回了 Components，没有用 eval 包裹并塞入 esModule 标识
+
+![](http://7xn4mw.com1.z0.glb.clouddn.com/17-11-21/1097434.jpg)
+
+虽然还是有些迷糊，不过我大致上推断就是 webpack3 新特性里编译打包的机制改动了吧，毕竟其他的 vue-markdown-loader 之类的插件，两个项目所用的版本一摸一样。
 
 ## 结语
 
